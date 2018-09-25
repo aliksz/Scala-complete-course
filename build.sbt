@@ -4,7 +4,7 @@ name := "scala-course"
 
 version := "1.0"
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.12.6"
 
 scalacOptions := Seq(
   "-encoding", "utf8",
@@ -17,6 +17,7 @@ scalacOptions := Seq(
 
 resolvers ++= Seq(
   Resolver.jcenterRepo,
+  Resolver.bintrayRepo("stanch", "maven"),
   Resolver.url("jCenter", url("http://jcenter.bintray.com/")),
   Resolver.sonatypeRepo("releases"),
   Resolver.sonatypeRepo("snapshots"))
@@ -61,5 +62,7 @@ libraryDependencies += "com.softwaremill.macwire" %% "util" % "2.3.0"
 libraryDependencies += "com.softwaremill.macwire" %% "proxy" % "2.3.0"
 
 libraryDependencies += "com.storm-enroute" %% "scalameter" % "0.9"
+
+libraryDependencies += "org.stanch" %% "reftree" % "1.2.0"
 
 parallelExecution in ThisBuild := false
